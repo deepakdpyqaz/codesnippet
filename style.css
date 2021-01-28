@@ -1,0 +1,31 @@
+#codes section {
+    position: relative;
+    width: 100%;
+    border-bottom: 2px solid black;
+    padding-top: 20px;
+}
+
+.toolbar-item button {
+    display: inline-block !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    vertical-align: middle !important;
+    cursor: pointer !important;
+    font-size: 20px !important;
+    -webkit-user-select: none !important;
+    border-color: #0d6efd !important;
+    border-radius: 2px !important;
+    background: #0d6efd !important;
+    color: white !important;
+    border: 1px solid #0d6efd !important;
+}
+
+ol {
+    list-style: none;
+}
+
+ol>li {
+    padding: 20px 0px;
+}
