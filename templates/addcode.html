@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block body %}
+
+<div class="container my-3">
+    <h1 class="h1 text-primary text-center">Add a new snippet</h1>
+    <form action="/addcode" method="POST" class="my-3 w-50 mx-auto px-auto">
+        {% csrf_token %}
+        <div class="form-floating my-2">
+            <select class="form-select" name='category' id="category" aria-label="Floating label select example" required>
+                
+                {% for category in categories %}
+                <option value="{{category}}"class="py-2" style="text-transform: capitalize;">{{category}}</option>
+                {% endfor %}
+            </select>
+            <label for="floatingSelect">Choose category</label>
+        </div>
+        <div class="form-floating my-2">
+            <select class="form-select" name='language' id="language" aria-label="Floating label select example" required>
+                <option value="HTML" class="py-2" style="text-transform: capitalize;">HTML</option>                
+                <option value="python" class="py-2" style="text-transform: capitalize;">python</option>                
+                <option value="js" class="py-2" style="text-transform: capitalize;">js</option>                
+                <option value="css" class="py-2" style="text-transform: capitalize;">css</option>                
+                <option value="c" class="py-2" style="text-transform: capitalize;">c</option>                
+                <option value="c++" class="py-2" style="text-transform: capitalize;">c++</option>                
+            </select>
+            <label for="floatingSelect">Choose category</label>
+        </div>
+        <div class="my-3">
+            <input type="password" name="password" class="form-control" id="password" aria-describedby="password" placeholder="Password.." required>
+        </div>
+        <div class="my-3">
+            <input type="text" name="title" class="form-control" id="title" aria-describedby="title" placeholder="Title.." required>
+        </div>
+        <div class="form-floating my-2">
+            <textarea class="form-control" name="code" placeholder="Enter your code" id="code" style="height: 300px" required></textarea>
+            <label for="floatingTextarea2">Enter your code</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+ {% extends 'base.html' %} {% block body %}
+<section id="codes" class="container py-2">
+    {% for item in snippets %}
+    <section id="{{item.name}}">
+        <h1 class="h1 text-secondary text-center" style="text-transform: capitalize;">{{item.name}}</h1>
+        <ol class="code">
+            {% for cd in item.codes %}
+            <li>
+                <h2 class="h2 text-dark">{{cd.title}}</h2>
+                <pre><code class="language-{{cd.language}}">{{cd.code}}</code></pre></li>
+            {% endfor %}
+        </ol>
+    </section>
+    {% endfor %}
+</section>
+{% endblock %}
