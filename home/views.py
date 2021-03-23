@@ -1,7 +1,7 @@
 from django.shortcuts import render,HttpResponse,redirect
 from home.models import Category, Codes
 # Create your views here.
-PASSWORD='DEEPak@123'
+PASSWORD=''
 def home(request):
     snippets=[]
     cats=Category.objects.order_by('category').all()
